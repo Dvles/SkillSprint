@@ -11,7 +11,7 @@ namespace DAL.Repositories{
         IEnumerable<User> GetAll();
         void Add(User user);
         void Update(User user);
-        void Delete(Guid userId);
+        void Delete(Guid user_id);
     }
 
 }

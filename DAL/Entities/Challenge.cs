@@ -3,40 +3,49 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
+namespace DAL.Entities
+{
+    public class Challenge
+    {
+        
+        public Guid Challenge_Id { get; set; }
 
-namespace DAL.Entities {
+        [Required]  
+        [StringLength(100)]  
+        public string Title { get; set; }
 
-    public class Challenge{
+        [StringLength(500)]  
+        public string Description { get; set; }
 
-        public Guid Challenge_Id {get;set;}
-        public string Title {get;set;}
-        public string Description {get;set;}
-        public DateTime StartDate {get;set;}
-        public DateTime EndDate {get;set;}
-        public ChallengeCategory Category {get;set;}
+        [Required] 
+        public DateTime StartDate { get; set; }
+
+        [Required] 
+        public DateTime EndDate { get; set; }
+
+        [Required] 
+        public ChallengeCategory Category { get; set; }
 
         public Challenge(string title, string description, DateTime startDate, DateTime endDate, ChallengeCategory category)
         {
-            Challenge_Id = Guid.NewGuid();      
-            Title = title;                      
-            Description = description;         
-            StartDate = startDate;             
-            EndDate = endDate;                  
-            Category = category;                
+            Challenge_Id = Guid.NewGuid();
+            Title = title ?? throw new ArgumentNullException(nameof(title));  
+            Description = description ?? string.Empty;  
+            StartDate = startDate;
+            EndDate = endDate;
+            Category = category;
         }
     }
-
 
     public enum ChallengeCategory
     {
         [Description("Create music pieces")]
         Music,
-        
+
         [Description("Write beautiful poetry")]
         Poetry,
-        
+
         [Description("Design creative works")]
         Design
     }
-
 }

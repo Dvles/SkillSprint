@@ -7,8 +7,8 @@ namespace DAL.Repositories{
 
     public interface ISubmissionsRepository
     {
-        Submissions GetById(Guid submission_id);
-        IEnumerable<Submissions> GetAll();
+        public Submissions GetById(Guid submission_id);
+        public IEnumerable<Submissions> GetAll();
         void Add(Submissions submission);
         void Update(Submissions submission);
         void Delete(Guid submission_id);

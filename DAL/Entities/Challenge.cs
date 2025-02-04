@@ -15,9 +15,17 @@ namespace DAL.Entities {
         public DateTime EndDate {get;set;}
         public ChallengeCategory Category {get;set;}
 
-
-
+        public Challenge(string title, string description, DateTime startDate, DateTime endDate, ChallengeCategory category)
+        {
+            Challenge_Id = Guid.NewGuid();      
+            Title = title;                      
+            Description = description;         
+            StartDate = startDate;             
+            EndDate = endDate;                  
+            Category = category;                
+        }
     }
+
 
     public enum ChallengeCategory
     {

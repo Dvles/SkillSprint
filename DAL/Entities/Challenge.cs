@@ -27,9 +27,6 @@ namespace DAL.Entities {
         [Description("Write beautiful poetry")]
         Poetry,
         
-        [Description("Develop coding challenges")]
-        Coding,
-        
         [Description("Design creative works")]
         Design
     }

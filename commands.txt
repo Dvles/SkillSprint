@@ -13,3 +13,6 @@ dotnet sln ASP-MVC.sln add DAL/DAL.csproj
 # Restore & Build the Solution
 dotnet restore
 dotnet build
+
+# Bogus package (C#'s faker') in relevant projectà
+dotnet add package Bogus

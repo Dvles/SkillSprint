@@ -4,7 +4,7 @@ using System.Reflection.Metadata;
 using Bogus;
 using DAL.Entities;
 
-namespace DAL.Repositories{
+namespace DAL.FakeDB{
     public static class FakeDB{
         
         private static Faker faker = new Faker();

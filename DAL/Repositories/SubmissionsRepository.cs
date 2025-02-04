@@ -29,7 +29,7 @@ namespace DAL.Repositories{
             }
 
             public void Delete (Guid submission_id){
-                Submissions existingSubmission = DAL.FakeDB.FakeDB.Submissions.FirstOrDefault(s => existingSubmission.Submission_Id == submission_id);
+                Submissions existingSubmission = DAL.FakeDB.FakeDB.Submissions.FirstOrDefault(s => s.Submission_Id == submission_id);
                 if (existingSubmission != null){
                     DAL.FakeDB.FakeDB.Submissions.Remove(existingSubmission);
                 }

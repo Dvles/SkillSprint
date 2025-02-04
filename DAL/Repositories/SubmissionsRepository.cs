@@ -21,17 +21,17 @@ namespace DAL.Repositories{
             }
 
             public void Update (Submissions submission){
-                Submissions currentSubmission = DAL.FakeDB.FakeDB.Submissions.FirstOrDefault( s => s.Submission_Id ==  submission.Submission_Id);
-                if (currentSubmission !=null){
-                    currentSubmission.Url = submission.Url;                    currentSubmission.Description = submission.Description;  
+                Submissions existingSubmission = DAL.FakeDB.FakeDB.Submissions.FirstOrDefault( s => s.Submission_Id ==  submission.Submission_Id);
+                if (existingSubmission !=null){
+                    existingSubmission.Url = submission.Url;                    existingSubmission.Description = submission.Description;  
                 }
                 Console.WriteLine("Submission updated");
             }
 
             public void Delete (Guid submission_id){
-                Submissions currentSubmission = DAL.FakeDB.FakeDB.Submissions.FirstOrDefault(s => currentSubmission.Submission_Id == submission_id);
-                if (currentSubmission != null){
-                    DAL.FakeDB.FakeDB.Submissions.Remove(currentSubmission);
+                Submissions existingSubmission = DAL.FakeDB.FakeDB.Submissions.FirstOrDefault(s => existingSubmission.Submission_Id == submission_id);
+                if (existingSubmission != null){
+                    DAL.FakeDB.FakeDB.Submissions.Remove(existingSubmission);
                 }
                 Console.WriteLine("Submission deleted");
 

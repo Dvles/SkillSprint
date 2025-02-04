@@ -18,8 +18,8 @@ namespace DAL.Repositories{
         }
 
         public void Delete(Guid comment_id){
-            Comment comment = DAL.FakeDB.FakeDB.Comments.FirstOrDefault(c => c.Comment_Id == comment_id);
-            DAL.FakeDB.FakeDB.Comments.Remove(comment);
+            Comment existingComment = DAL.FakeDB.FakeDB.Comments.FirstOrDefault(c => c.Comment_Id == comment_id);
+            DAL.FakeDB.FakeDB.Comments.Remove(existingComment);
         }
     }
 }

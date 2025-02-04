@@ -1,3 +1,6 @@
 # initialize DAL & BLL
 dotnet new classlib
 
+# Add References Between Projects (from root folder)
+dotnet add BLL/BLL.csproj reference DAL/DAL.csproj
+dotnet add ASP-MVC/ASP-MVC.csproj reference BLL/BLL.csproj

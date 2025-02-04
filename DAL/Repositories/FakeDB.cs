@@ -42,9 +42,6 @@ namespace DAL.Repositories{
                 "0000"
                
             ),
-
-
-
         };
     }
 }

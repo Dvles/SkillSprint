@@ -9,7 +9,7 @@ namespace DAL.Repositories{
     {
         User GetById(Guid user_id);
         IEnumerable<User> GetAll();
-        void Add(User user);
+        void Insert(User user);
         void Update(User user);
         void Delete(Guid user_id);
     }
